@@ -1,0 +1,19 @@
+package br.com.arena21.dao;
+
+import java.sql.Connection;
+
+import br.com.arena21.connection.Conexao;
+
+public class SalaDao {
+
+	//Variável contendo a conexão
+	private Connection conexao;
+	
+	//Construtor
+	public SalaDao(){
+		
+		this.conexao = Conexao.obterConexao();
+		
+	}
+	
+}

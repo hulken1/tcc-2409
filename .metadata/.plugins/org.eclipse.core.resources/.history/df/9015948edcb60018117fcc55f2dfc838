@@ -1,0 +1,12 @@
+package br.com.arena21.connection;
+
+import java.sql.Connection;
+
+public class Conexao {
+
+	//Método para retornar a conexão
+	public static Connection obterConexao(){
+		
+	}
+	
+}

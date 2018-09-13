@@ -1,0 +1,25 @@
+package br.com.arena21.connection;
+
+import java.sql.Connection;
+
+public class Conexao {
+
+	//Método para retornar a conexão
+	public static Connection obterConexao(){
+		
+		//Variável contendo a conexão
+		Connection conexao = null;
+		
+		//Tentar obter a conexão
+		try{
+			System.out.println("OK");
+		}catch (Exception e) {
+			System.out.println("FODEU");
+		}
+		
+		//Retorno
+		return conexao;
+		
+	}
+	
+}

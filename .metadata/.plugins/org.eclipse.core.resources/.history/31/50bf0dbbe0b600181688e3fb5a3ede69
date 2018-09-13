@@ -1,0 +1,49 @@
+package br.com.arena21.dao;
+
+import java.sql.Connection;
+
+import br.com.arena21.connection.Conexao;
+
+public class SalaDao {
+
+	//Variável contendo a conexão
+	private Connection conexao;
+	
+	//Construtor
+	public SalaDao(){
+		this.conexao = Conexao.obterConexao();
+	}
+	
+	//Método para retornar as salas
+	public String exibirSalas(){
+		
+		//Estrutura
+		String estrutura = "";
+		
+			for(int i=0; i<5; i++){
+				
+				if(i % 4 == 0){
+					estrutura +="<div class='row'>";
+				}
+		
+			estrutura += "<div class='col-md-3' id='thumbImage'>";
+				estrutura += "<div class='thumbnail'>";
+					estrutura += "<img src='img/img-1.jpg' alt='...'>";
+					estrutura += "<div class='caption'>";                       
+						estrutura += "<p><a href='#' class='btn btn-primary' role='button'>Entrar</a></p>";
+					estrutura += "</div>";
+				estrutura += "</div>";
+			estrutura += "</div>";
+			
+			if(i % 2 == 0){
+				estrutura +="</div'>";
+			}
+			
+			}
+			
+		//Retorno
+		return estrutura;
+		
+	}
+	
+}

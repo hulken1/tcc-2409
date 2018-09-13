@@ -1,0 +1,8 @@
+package br.com.arena21.connection;
+
+public class Conexao {
+
+	//Método para retornar a conexão
+	
+	
+}
