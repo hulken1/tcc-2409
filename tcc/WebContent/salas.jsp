@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/padrao.css">
     <link rel="stylesheet" href="css/pesquisa.css">
+    
 
 
     <!-- Resource style -->
@@ -57,13 +58,14 @@
             <!-- cd-tab-filter-wrapper -->
 
             <section class="cd-gallery">                 
-                    <div class="container filtro">
+                    <div class="container ">
                             
-                            
+                         
        							 <%
                             		out.print(new SalaDao().exibirSalas());
                             	%>                            
-                                        
+                                  <link async href="http://fonts.googleapis.com/css?family=Aladin" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css" />
+                        <link async href="http://fonts.googleapis.com/css?family=Open%20Sans" data-generated="http://enjoycss.com" rel="stylesheet" type="text/css" />      
 							
                     </div>
 
@@ -77,7 +79,7 @@
                         <h4>Procura</h4>
 
                         <div class="cd-filter-content cd-filters" >
-                            <input type="text" id="input" class="filter-simple-button" value="" placeholder="Nome Jogo">
+                            <input type="text" id="input" value="" placeholder="Nome Jogo">
                         </div>
                         <!-- cd-filter-content -->
                     </div>
@@ -135,6 +137,7 @@
                 <a href="javascript:" id="return-to-top"><i class="glyphicon glyphicon-chevron-up"></i></a>
         <!-- cd-main-content -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
         <script src="js/jquery.mixitup.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/padrao.js"></script>
@@ -146,25 +149,7 @@
               cidade: document.getElementById('cidade1'),
               estado: document.getElementById('estado1')
             })
-          </script>
-         
-        	       <script>
-        	       $('.filter-simple-button').on("keyup",function() {
-        	        	  var value = $(this).attr('data-filter');
-        	        	  if(value === "all") {
-        	        	    $('.filter-simple-item').show('1000');
-        	        	  } else {
-        	        	    $('.filter-simple-item').not('.'+value).hide('3000');
-        	        	    $('.filter-simple-item').filter('.'+value).show('3000');
-        	        	  }
-        	        	});
 
-        	        	// changes active class on filter buttons
-        	        	$('.filter-simple-button').on("keyup",function () {
-        	        	  $(this).siblings().removeClass('is-active');
-        	        	  $(this).addClass('is-active');
-        	        	});
-</script>
 </body>
 
 </html>
