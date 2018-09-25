@@ -34,7 +34,7 @@
         <!-- Topo -->
         <div class="row">
             <div class="col-md-11">
-                <nav class="row navtop">
+                <nav class="navtop">
                     <a href="index.html">
                         <img src="imagens/logo/coliseu2.png" class="imgsite">
                     </a>
@@ -42,7 +42,7 @@
                 
 	<div class="col-md-1">
 	
-	<button class="btn btn-danger"></button>
+	<a id="btnSalas" type="submit" href="salas.jsp">Exibir Salas</a>
 		
 	</div>
 	
@@ -87,11 +87,18 @@ String pesquisajogo = String.valueOf(request.getParameter("nomeJogo"));
     	  
           //Sua estrutura contendo as imagens, textos e vídeos
 %>
-          
-          			<div class='col-md-3' id='thumbImage'>				
-					<p><h1><%=rs.getString("nomeSala") %></h1></p>
-					<p><%=rs.getString("nomeJogo") %></p>
+          			
+          			<div class='col-md-3' id="painelSala">	
+          			<div class="panel-group">
+          			<div class="panel panel-default">
+          			<div class="panel-body"><small>Sala</small>
+          			<span class="label label-success" id="textoSala"><%=rs.getString("nomeSala") %></span>
+          			</div>
+ 					<div class="panel-body"><h1 >Sala: <span class="label label-success" id="textoSala"><%=rs.getString("nomeJogo") %></span></h1></div>
+  					</div>			
+					<div class="panel-footer"><%=rs.getInt("idSala") %></div>
 					<button class='btn btn-primary' id='botaoEntrar'>Entrar</button>
+					</div>
 					</div>
           		
           
@@ -119,26 +126,14 @@ String pesquisajogo = String.valueOf(request.getParameter("nomeJogo"));
                      <form action="pesquisajogo.jsp" method="get">
     						<input type="text" name="nomeJogo" placeholder="Nome jogo que procura">
      						<input type="submit">
-     						<input type="reset" href="salas.jsp">
+     						
 					</form>
 
 
                         </div>
                         <!-- cd-filter-content -->
                     </div>
-                    <div class="cd-filter-block">
-                        <h4> Cidades </h4>
-                        <div class="cd-filter-content">
-
-                            <select id="estado1" value="Selecione Estado"></select>
-                            <select id="cidade1" value="Selecione Cidade"></select>
-
-
-                            <!-- cd-select -->
-                        </div>
-                        <!-- cd-filter-content -->
-                    </div>
-
+                    
               
                 <a href="#0" class="cd-close">Close</a>
             </div>

@@ -39,11 +39,18 @@ public class SalaDao {
 				estrutura +="<div class='row'>";
 			}
 			
-					estrutura += "<div class='col-md-3' id='thumbImage'>";					
-					estrutura += "<p>"+"<h1>Sala: </h1>"+rs.getString("nomeSala")+"</p>";
-					estrutura += "<p class='texto'>"+rs.getString("nomeJogo")+"</p>"; 
-					estrutura += "<button class='btn btn-primary' id='botaoEntrar'>Entrar</button>";
-					estrutura += "</div>";		
+			estrutura +="<div class='col-md-3' id='painelSala'>";	
+			estrutura +="<div class='panel-group'>";
+					estrutura +="<div class='panel panel-default'>";
+							estrutura +="<div class='panel-body'><small>Sala</small>";
+									estrutura +="<span class='label label-success' id='textoSala'>"+rs.getString("nomeSala")+"</span>";
+											estrutura +="</div>";
+								estrutura +="<div class='panel-body'><h1 >Sala: <span class='label label-success' id='textoSala'>"+rs.getString("nomeJogo")+"</span></h1></div>";
+															estrutura +="</div>	";		
+																	estrutura +="<div class='panel-footer'>"+rs.getInt("idSala")+"</div>";
+																			estrutura +="<button class='btn btn-primary' id='botaoEntrar'>Entrar</button>";
+																					estrutura +="</div>";
+																							estrutura +="</div>";
 					
 					
 		
