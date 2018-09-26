@@ -1,19 +1,22 @@
-<%@page import="br.com.arena21.login.User"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"    
-    %>
-<%
-User us = new User();
-String login = request.getParameter("login");
-String pass = request.getParameter("pass");
-boolean status = us.verificarUsuario(login,pass);
 
-if(us.result== true){
-	out.println("Login realizado com sucesso" + us.nome);
-	
-}else{
-	out.println("login ou senha invalidos");
-}
+<%@ page import ="java.sql.*" %>
+<%
+    try{
+        String login = request.getParameter("login");   
+        String senha = request.getParameter("pass");
+        Class.forName("com.mysql.jdbc.Driver");  // MySQL database connection
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/arena21?" + "user=root&password=");    
+        PreparedStatement pst = conn.prepareStatement("Select login,pass from cadastrojogador where login=? and pass=?");
+        pst.setString(1, login);
+        pst.setString(2, senha);
+        ResultSet rs = pst.executeQuery();                        
+        if(rs.next())           
+        	response.sendRedirect("poslogin.jsp");      
+        else
+           out.println("Invalid login credentials");            
+   }
+   catch(Exception e){       
+       out.println("Something went wrong !! Please try again");       
+   }     
 
 %>
-
