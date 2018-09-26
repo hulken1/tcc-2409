@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/padrao.css">
         <link rel="stylesheet" href="css/pesquisa.css">
+                    
 
         <!-- Resource style -->
 
@@ -40,12 +41,10 @@
                     </a>
                 </nav>
                 
-	<div class="col-md-1">
-	
+	<div class="col-md-1">	
 	<a id="btnSalas" type="submit" href="salas.jsp">Exibir Salas</a>
-		
+		<a id="btnSalas" type="submit" data-target="#modal-sala" data-toggle="modal">Criar Sala</a>
 	</div>
-	
 	
             </div>
         </div>
@@ -63,7 +62,20 @@
 	
 	<div class="row">
             <section class="cd-gallery">
-	
+	<div class="modal fade" id="modal-sala" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Cadastro de Sala</h1><br>
+				  <form name="cadastroSala" action="CRUD/cadastrosala.jsp" method="post">
+					<input type="text" name="nomeSala" placeholder="Nome Sala">
+					<input type="text" name="nomeJogo" placeholder="Jogo">
+					<input type="submit" class="login loginmodal-submit" value="Cadastrar">
+				  </form>
+					
+				  
+				</div>
+			</div>
+		  </div>
 <%
 String pesquisajogo = String.valueOf(request.getParameter("nomeJogo"));
     try{
@@ -128,9 +140,8 @@ String pesquisajogo = String.valueOf(request.getParameter("nomeJogo"));
      						<input type="submit">
      						
 					</form>
-
-
                         </div>
+                        
                         <!-- cd-filter-content -->
                     </div>
                     
@@ -143,7 +154,9 @@ String pesquisajogo = String.valueOf(request.getParameter("nomeJogo"));
         </main>
 
         </main>
+ 
         <div>
+        
             <footer>
                 <div class="container">
                     <div class="row">
@@ -169,13 +182,7 @@ String pesquisajogo = String.valueOf(request.getParameter("nomeJogo"));
         <script src="js/jquery.mixitup.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/padrao.js"></script>
-        <script type="text/javascript" src="js/cidades-estados-utf8.js"></script>
-			<script language="JavaScript" type="text/javascript" charset="utf-8">
-      		new dgCidadesEstados({
-        cidade: document.getElementById('cidade1'),
-        estado: document.getElementById('estado1')
-      })
-    </script>
+       
         <!-- Resource jQuery -->
        
             </body>

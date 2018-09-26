@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/padrao.css">
         <link rel="stylesheet" href="css/pesquisa.css">
-
         <!-- Resource style -->
 
         <!-- Modernizr -->
@@ -76,18 +75,7 @@
                         </div>
                         <!-- cd-filter-content -->
                     </div>
-                    <div class="cd-filter-block">
-                        <h4> Cidades </h4>
-                        <div class="cd-filter-content">
-
-                            <select id="estado1" value="Selecione Estado"></select>
-                            <select id="cidade1" value="Selecione Cidade"></select>
-
-
-                            <!-- cd-select -->
-                        </div>
-                        <!-- cd-filter-content -->
-                    </div>
+                   
 
               
                 <a href="#0" class="cd-close">Close</a>
@@ -115,22 +103,17 @@
                 </div>
 
             </footer>
+                    <a href="javascript:" id="return-to-top"><i class="glyphicon glyphicon-chevron-up"></i></a>
         </div>
 
         <!-- cd-main-content -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <a href="javascript:" id="return-to-top"><i class="glyphicon glyphicon-chevron-up"></i></a>
+
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script src="js/jquery.mixitup.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/padrao.js"></script>
-        <script type="text/javascript" src="js/cidades-estados-utf8.js"></script>
-			<script language="JavaScript" type="text/javascript" charset="utf-8">
-      		new dgCidadesEstados({
-        cidade: document.getElementById('cidade1'),
-        estado: document.getElementById('estado1')
-      })
-    </script>
+        
         <!-- Resource jQuery -->
        
             </body>

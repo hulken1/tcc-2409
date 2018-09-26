@@ -7,7 +7,7 @@
         	
             try{          	
             	String nomesala = request.getParameter("nomeSala");
-                String nomejogador = request.getParameter("nomeJogador");
+                String nomejogo = request.getParameter("nomeJogo");
                 
                 
                 String DRIVER = "com.mysql.jdbc.Driver";
@@ -16,7 +16,8 @@
         		Connection con = null;
         		Statement stmt = null;
         		
-            	String sql = "INSERT INTO salas(nomeSala,nomeJogo) VALUES('"+nomesala+"','"+nomejogador+"')";
+            	String sql = "INSERT INTO salas(nomeSala,nomeJogo) VALUES('"+nomesala+"','"+nomejogo+"')";
+            	
             	
             	String url = "jdbc:mysql://localhost:3306/arena21";
             	String root = "root";
@@ -30,4 +31,6 @@
             }catch(Exception e){
             	out.print("Deu erro ao inserir"+e);
             }
+    
+    response.sendRedirect("../salas.jsp");
         %>

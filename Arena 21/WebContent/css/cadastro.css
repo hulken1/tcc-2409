@@ -133,12 +133,11 @@ select {
 
 .formularioCadastro input {
     width: 80%;
-    float: left;
+    float: right;
 }
-
 .formularioCadastro Select {
     width: 80%;
-    float: left;
+    float: right;
 }
 
 #cpf {
