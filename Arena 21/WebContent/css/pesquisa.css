@@ -15,9 +15,9 @@
 
 #botaoEntrar{
 	width: 250px;
-	margin-top:117px;	
+	margin-top:115px;	
 	text-align:center;
-	position: fixed;
+	position: absolute;
 	
 }
 #botaoEntrar {
@@ -43,11 +43,12 @@
 	transition: all 0.3s ease 0s;
 }
 #textoSala{
-	font-size:20px;
-	color:blue;
+	font-size:17px;
+	color:#000000;
 }
 #textoSmall{
 	color:white;
+	margin-left:6px;
 }
 input {
   padding: .5em;

@@ -16,6 +16,7 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
         <link rel="stylesheet" href="css/reset.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- CSS reset -->
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/padrao.css">
@@ -34,21 +35,26 @@
 
         <!-- Topo -->
         <div class="row">
-            <div class="col-md-11">
+            <div class="col-md-12">
                 <nav class="navtop">
                     <a href="index.html">
                         <img src="imagens/logo/coliseu2.png" class="imgsite">
                     </a>
                 </nav>
-                
-	<div class="col-md-1">	
-	<a id="btnSalas" type="submit" href="salas.jsp">Exibir Salas</a>
-		<a id="btnSalas" type="submit" data-target="#modal-sala" data-toggle="modal">Criar Sala</a>
-	</div>
+                </div>
+                 </div>
+                  </div>
+             	 <div class="row">  
+	<div class="col-md-3">	
 	
-            </div>
+	<a id="btnSalas" type="submit" href="salas.jsp">Exibir Salas</a>
+	<a id="btnSalas" type="submit" data-target="#modal-sala" data-toggle="modal">Criar Sala</a>		
+	</div>
+ 
+	
+           
         </div>
-
+ 
         <main class="cd-main-content">
             <div class="cd-tab-filter-wrapper">
                 <div class="cd-tab-filter">
@@ -78,6 +84,7 @@
 		  </div>
 <%
 String pesquisajogo = String.valueOf(request.getParameter("nomeJogo"));
+String idjogador = String.valueOf(request.getParameter("idJogador"));
     try{
     	
        //Preparar o envio do parâmetro
@@ -100,18 +107,26 @@ String pesquisajogo = String.valueOf(request.getParameter("nomeJogo"));
           //Sua estrutura contendo as imagens, textos e vídeos
 %>
           			
-          			<div class='col-md-3' id="painelSala">	
-          			<div class="panel-group">
-          			<div class="panel panel-default">
-          			<div class="panel-body"><small>Sala</small>
-          			<span class="label label-success" id="textoSala"><%=rs.getString("nomeSala") %></span>
-          			</div>
- 					<div class="panel-body"><h1 >Sala: <span class="label label-success" id="textoSala"><%=rs.getString("nomeJogo") %></span></h1></div>
-  					</div>			
-					<div class="panel-footer"><%=rs.getInt("idSala") %></div>
-					<button class='btn btn-primary' id='botaoEntrar'>Entrar</button>
-					</div>
-					</div>
+          				<div class='col-md-3' id='painelSala'>					
+					<div>
+					<div id="textoPage">
+						<small id='textoSmall'>Sala: </small>
+								<span class='label' id='textoSala'><%=rs.getString("nomeSala")%></span>
+								</div>
+								<div>
+								<small id='textoSmall'>Jogo: </small>
+								<span class='label'id='textoSala' ><%=rs.getString("nomeJogo")%></span>								
+								</div>
+							
+								<div>
+								<small id='textoSmall'>Id jogador: </small>
+						<span class='label' id='textoSala'>#<%=rs.getInt("idSala")%></span>
+						</div>
+						</div>
+						<div>
+						<button class='btn btn-default' id='botaoEntrar'>Entrar</button>
+						</div>	
+					</div>	
           		
           
           <% 

@@ -28,8 +28,15 @@
         <!-- Topo -->
         
               <jsp:include page = "includes/logotipo.jsp" />
-          
+              </div>
+          <div class="row">  
+	<div class="col-md-3">	
+	
+	<a id="btnSalas" type="submit" href="salas.jsp">Exibir Salas</a>
+	<a id="btnSalas" type="submit" data-target="#modal-sala" data-toggle="modal">Criar Sala</a>		
+	</div>
 </div>
+
         <main class="cd-main-content">
             <div class="cd-tab-filter-wrapper">
                 <div class="cd-tab-filter">
@@ -39,6 +46,7 @@
                 <!-- cd-tab-filter -->
             </div>
             <!-- cd-tab-filter-wrapper -->
+
 <div class="container">
 	<div class="row">
             <section class="cd-gallery">
@@ -84,7 +92,20 @@
         <div>
             <jsp:include page = "includes/footer.jsp" />
         </div>
-
+<div class="modal fade" id="modal-sala" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Cadastro de Sala</h1><br>
+				  <form name="cadastroSala" action="CRUD/cadastrosala.jsp" method="post">
+					<input type="text" name="nomeSala" placeholder="Nome Sala">
+					<input type="text" name="nomeJogo" placeholder="Jogo">
+					<input type="submit" class="login loginmodal-submit" value="Cadastrar">
+				  </form>
+					
+				  
+				</div>
+			</div>
+		  </div>
         <!-- cd-main-content -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 

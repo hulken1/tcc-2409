@@ -51,7 +51,7 @@ public class SalaDao {
 							
 								estrutura += "<div>";
 								estrutura +="<small id='textoSmall'>Id jogador: </small>";
-						estrutura +="<span class='label' id='textoSala'>"+rs.getInt("idJogador")+"</span>";
+						estrutura +="<span class='label' id='textoSala'>#"+rs.getInt("idSala")+"</span>";
 						estrutura += "</div>";	
 						estrutura += "<div>";
 						estrutura +="<button class='btn btn-default' id='botaoEntrar'>Entrar</button>";
