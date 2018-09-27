@@ -39,22 +39,24 @@ public class SalaDao {
 				estrutura +="<div class='row'>";
 			}
 			
-			estrutura +="<div class='col-md-3' id='painelSala'>";	
-			estrutura +="<div class='panel-group'>";
-					estrutura +="<div class='panel panel-default'>";
-							estrutura +="<div class='panel-body'><small>Sala</small>";
-									estrutura +="<span class='label label-success' id='textoSala'>"+rs.getString("nomeSala")+"</span>";
-											estrutura +="</div>";
-								estrutura +="<div class='panel-body'><h1 >Sala: <span class='label label-success' id='textoSala'>"+rs.getString("nomeJogo")+"</span></h1></div>";
-															estrutura +="</div>	";		
-																	estrutura +="<div class='panel-footer'>"+rs.getInt("idSala")+"</div>";
-																			estrutura +="<button class='btn btn-primary' id='botaoEntrar'>Entrar</button>";
-																					estrutura +="</div>";
-																							estrutura +="</div>";
+			estrutura +="<div class='col-md-3' id='painelSala'>";					
+					estrutura += "<div>";
+						estrutura +="<small>Sala: </small>";
+								estrutura +="<span class='label' id='textoSala'>"+rs.getString("nomeSala")+"</span>";	
+								estrutura += "</div>";
+								estrutura += "<div>";
+								estrutura +="<small>Jogo: </small>";
+								estrutura +="<span class='label'id='textoSala' >"+rs.getString("nomeJogo")+"</span>";		
+								estrutura += "</div>";
+								estrutura += "<div>";
+								estrutura +="<small>Id jogador: </small>";
+						estrutura +="<span class='label' id='textoSala'>"+rs.getInt("idSala")+"</span>";
+						estrutura += "</div>";	
+						estrutura +="<button class='btn btn-default' id='botaoEntrar'>Entrar</button>";
+					estrutura +="</div>	";	
 					
-					
-		
-			
+																							
+																							
 		if(indice % 4 == 0){
 			estrutura +="</div'>";
 		}

@@ -11,6 +11,7 @@
 
         <link rel="stylesheet" href="css/reset.css">
         <!-- CSS reset -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/padrao.css">
         <link rel="stylesheet" href="css/pesquisa.css">

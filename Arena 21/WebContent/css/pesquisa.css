@@ -10,12 +10,14 @@
     margin-top: 50px;
 	background-image:url("../imagens/fundo/fundosala.gif");
 	background-size:cover;
-	
+
 }
+
 #botaoEntrar{
 	width: 200px;
-	margin-top:140px;	
+	margin-top:112px;	
 	text-align:center;
+	
 }
 #botaoEntrar {
 	border: none;
@@ -154,11 +156,11 @@ input {
   opacity: 0.6;
   transition: opacity ease 0.5s;
 } 
-
-
-
-
-
+.alertaIndex{
+	width: 500px;
+	margin : 10px auto;
+	font : 17px sans-serif;
+}
 
 
 

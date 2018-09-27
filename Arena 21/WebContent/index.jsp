@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,6 +16,9 @@
 </head>
 
 <body>
+<!-- Incluir arquivo de mensagens -->
+		<%@ include file="includes/msg.jsp" %>
+
     <div id="background"></div>
     <nav class="row navtop">
         <a href="index.html">
@@ -34,7 +40,6 @@
     <div id="sideLateral" class="sidenav">
   <a href="#" id="sobre" ><img src="imagens/icones/about.png" title="Sobre"></a>
   <a href="#" id="cadastro"  onclick="window.location.href='cadastro.html'" title="Cadastro"><img src="imagens/icones/cadastro.png"></a>
-  <a href="#" id="salas"  onclick="window.location.href='salas.jsp'" title="Salas"><img src="imagens/icones/salas.png" ></a>
   <a href="#" id="forum"  onclick="window.location.href='forum.jsp'" title="Forum"><img src="imagens/icones/forum.png" ></a>
 </div>
    </div>  
@@ -178,7 +183,7 @@
                 <div id="div-forms">
 
                     <!-- Begin # Login Form -->
-                    <form id="login-form" action="check.jsp" method="post">
+                    <form id="login-form" action="logar.jsp" method="post">
                         <div class="modal-body">
                             <div id="div-login-msg">
                                 <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
@@ -275,6 +280,8 @@
 
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="js/validarFormularios.js"></script>
+        
         <!-- Bootstrap JavaScript -->
         <script src="js/padrao.js"></script>
         <script src="js/bootstrap.min.js"></script>

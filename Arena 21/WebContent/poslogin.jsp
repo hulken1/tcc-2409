@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 
 
+<%@page import="br.com.arena21.bean.UsuarioBean"%>
+<%@page import="br.com.arena21.connection.Conexao"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>teste</title>
+    <title>Pós Login</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/poslogin.css" rel="stylesheet">
     <link href="css/padrao.css" rel="stylesheet">
@@ -35,7 +39,7 @@
     <div id="background">
     </div>
     <nav class="navtop">
-        <a href="index.html">
+        <a href="index.jsp">
             <img src="imagens/logo/coliseu2.png" class="imgsite">
         </a>
 
@@ -43,9 +47,23 @@
     <div class="barraleft">
         <ul class="nav navbar-nav">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nome Usuario <span class="glyphicon glyphicon-user pull-right"></span></a>
+            <%
+            UsuarioBean ub = new UsuarioBean();
+            try{
+           		ub = (UsuarioBean) session.getAttribute("sessaoUsuario");
+
+				  %>
+	        	   <a href="#" data-toggle="dropdown"><span class="dropdown-toggle" ><% out.print(ub.getNome()); %></span></a>
+	        	  
+	        	  <% }catch(Exception e){
+            	out.print("Você não está logado.");
+            }
+  
+%>
+                
                 <ul class="dropdown-menu">
-                    <li><a id="config">ConfiguraÃ§Ãµes de conta <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
+                <li><a href="#" id="salas"  onclick="window.location.href='salas.jsp'" title="Salas"><img src="imagens/icones/salas.png" ></a></li>
+                    <li><a id="config">Configurações de conta <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
                     <li class="divider"></li>
                     <li><a id="conta">Dados do Usuario <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
                     
@@ -55,7 +73,7 @@
                     <li class="divider"></li>
                     <li><a id="list">Lista de Amigos <span class="glyphicon glyphicon-heart pull-right"></span></a></li>
                     <li class="divider"></li>
-                    <li><a href="index.html">Sair <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+                    <li><a href="sair.jsp">Sair <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
                 </ul>
             </li>
         </ul>
@@ -67,7 +85,7 @@
             <div class="modal-dialog">
                  <div id="modalbody" class="modal-content">
                      <div class="modal-header">
-                         <button type="button" class="close" data-dismiss="modal"><span>Ã—</span></button>
+                         <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
                          <h4 id="modaltitulo" class="modal-title">Dados Do Usuario</h4>
                      </div>
                      <div id="modalbody" class="modal-body">
@@ -114,7 +132,7 @@
                                         <td>Female</td>
                                       </tr>
                                         <tr>
-                                        <td>EndereÃ§o</td>
+                                        <td>Endereço</td>
                                         <td>Kathmandu,Nepal</td>
                                       </tr>
                                       <tr>
@@ -171,12 +189,15 @@
                           <div class="panel-body">
                             <input type="text" class="form-control" id="modalbody2" data-action="filter" data-filters="#dev-table" placeholder="Filtrar Amigos" />
                           </div>
-                          <table class="table" id="dev-table">
+                          <table class="table" id="dev-table" >
                             <thead>
                               <tr>
                                 <th>#ID</th>
                                 <th>Nome</th>
                                 <th>Nick</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
                               </tr>
                             </thead>
                             <tbody>
@@ -184,31 +205,49 @@
                                 <td>1</td>
                                 <td>Kilgore</td>
                                 <td>kilgore</td>
+                                <td><button type="" title="Add Amigo"><img src="imagens/icons8-adicionar-usuário-masculino-15.png" > </a> </td>
+                                    <td><button type="" title="Bloquear"><img src="imagens/icons8-remover-usuário-masculino-15.png" > </a> </td>
+                                   <td><button type="" title="Reportar"><img src="imagens/icons8-erro-15.png" > </a> </td>
                               </tr>
                               <tr>
                                 <td>2</td>
                                 <td>Bob</td>
                                 <td>boblahblah</td>
+                                <td><button type="" title="Add Amigo"><img src="imagens/icons8-adicionar-usuário-masculino-15.png" > </a> </td>
+                                    <td><button type="" title="Bloquear"><img src="imagens/icons8-remover-usuário-masculino-15.png" > </a> </td>
+                                   <td><button type="" title="Reportar"><img src="imagens/icons8-erro-15.png" > </a> </td>
                               </tr>
                               <tr>
                                 <td>3</td>
                                 <td>Holden</td>
                                 <td>penceyreject</td>
+                                <td><button type="" title="Add Amigo"><img src="imagens/icons8-adicionar-usuário-masculino-15.png" > </a> </td>
+                                    <td><button type="" title="Bloquear"><img src="imagens/icons8-remover-usuário-masculino-15.png" > </a> </td>
+                                   <td><button type="" title="Reportar"><img src="imagens/icons8-erro-15.png" > </a> </td>
                               </tr>
                               <tr>
                                     <td>4</td>
-                                    <td>Holden</td>
-                                    <td>penceyreject</td>
+                                    <td>Hoen</td>
+                                    <td>pack</td>
+                                    <td><button type="" title="Add Amigo"><img src="imagens/icons8-adicionar-usuário-masculino-15.png" > </a> </td>
+                                        <td><button type="" title="Bloquear"><img src="imagens/icons8-remover-usuário-masculino-15.png" > </a> </td>
+                                       <td><button type="" title="Reportar"><img src="imagens/icons8-erro-15.png" > </a> </td>
                                   </tr>
                                   <tr>
                                         <td>5</td>
-                                        <td>Holden</td>
-                                        <td>penceyreject</td>
+                                        <td>legend</td>
+                                        <td>L2</td>
+                                        <td><button type="" title="Add Amigo"><img src="imagens/icons8-adicionar-usuário-masculino-15.png" > </a> </td>
+                                            <td><button type="" title="Bloquear"><img src="imagens/icons8-remover-usuário-masculino-15.png" > </a> </td>
+                                           <td><button type="" title="Reportar"><img src="imagens/icons8-erro-15.png" > </a> </td>
                                       </tr>
                                       <tr>
                                             <td>6</td>
-                                            <td>Holden</td>
-                                            <td>penceyreject</td>
+                                            <td>jão</td>
+                                            <td>jaozinho</td> 
+                                            <td><button type="" title="Add Amigo"><img src="imagens/icons8-adicionar-usuário-masculino-15.png" > </a> </td>
+                                                <td><button type="" title="Bloquear"><img src="imagens/icons8-remover-usuário-masculino-15.png" > </a> </td>
+                                               <td><button type="" title="Reportar"><img src="imagens/icons8-erro-15.png" > </a> </td>
                                           </tr>
                             </tbody>
                           </table>
@@ -268,46 +307,46 @@
                </div>
                 </div>
 
+
+                
     <!-- Copyright -->
 <!-- modal lista de amigos FIM -->
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<input type="text" placeholder="Cole Link Stream aqui" class="form-control input-sm" id="link">
+  <!-- submit = botao , value= por nome do botao -->
+  <input type="submit" value="Enviar Stream" class="btn btn-danger btn">
+
+  <br>
+    <br>
+    <br>
+    <br>
+<div id="video" class="container">
+
+          
+                
+    <ul class="list-unstyled video-list-thumbs row">
+        <li class="col-md-6">
+            <a href="#" title="live">
+                <iframe src="https://player.twitch.tv/?channel=immortoru " frameborder="0" allowfullscreen="true" scrolling="no" height="600" width="500" ></iframe><a href="https://www.twitch.tv/immortoru?tt_content=text_link&tt_medium=live_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;"></a>
+                 </a>
+            <br>
+        </li>
+        <li class="col-md-6">
+            <a href="#" title="Chat">
+
+            </a>
+                </li>
+                <iframe src="https://www.twitch.tv/embed/immortoru/chat" frameborder="0" scrolling="no" height="600" width="500" ></iframe>
+                <li class="col-md-4">
+           
+    
+    
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 <br>
 <br>
 <br>
@@ -320,7 +359,7 @@
           <div class="container">
               <div class="row">
                   <div class="col-sm-10">
-                      <small>Â© 2018 Copyright:</small>
+                      <small>© 2018 Copyright:</small>
                       <strong>Ademilson 
                         Adolfo
                         Marcos
@@ -338,5 +377,5 @@
     <script src="js/padrao.js"></script>
     <script src="js/friend.js"></script>
     <!-- Bootstrap JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>

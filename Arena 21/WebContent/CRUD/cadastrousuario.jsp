@@ -45,6 +45,6 @@
             }catch(Exception e){
             	out.print("Deu erro ao inserir"+e);
             }
-    
+response.sendRedirect("../cadastro.html");
  
         %>
