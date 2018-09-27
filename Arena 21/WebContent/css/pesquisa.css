@@ -15,7 +15,7 @@
 
 #botaoEntrar{
 	width: 200px;
-	margin-top:112px;	
+	margin-top:120px;	
 	text-align:center;
 	
 }
@@ -28,6 +28,9 @@
 	text-transform: uppercase;
 	display: inline-block;
 }
+ .col-md-3{
+ padding-left: 0px;
+ }
 #botaoEntrar:hover {
 	color: #ffffff!important;
 	font-weight: 700 !important;

@@ -20,10 +20,7 @@
 		<%@ include file="includes/msg.jsp" %>
 
     <div id="background"></div>
-    <nav class="row navtop">
-        <a href="index.html">
-            <img src="imagens/logo/coliseu2.png" class="imgsite">
-        </a>
+     <jsp:include page = "includes/logotipo.jsp" />
         <div class="menu">
 
             <div class="btn">
@@ -39,7 +36,7 @@
   <div class="col-md-1" id="menuLateral">
     <div id="sideLateral" class="sidenav">
   <a href="#" id="sobre" ><img src="imagens/icones/about.png" title="Sobre"></a>
-  <a href="#" id="cadastro"  onclick="window.location.href='cadastro.html'" title="Cadastro"><img src="imagens/icones/cadastro.png"></a>
+  <a href="#" id="cadastro"  onclick="window.location.href='cadastro.jsp'" title="Cadastro"><img src="imagens/icones/cadastro.png"></a>
   <a href="#" id="forum"  onclick="window.location.href='forum.jsp'" title="Forum"><img src="imagens/icones/forum.png" ></a>
 </div>
    </div>  
@@ -260,24 +257,7 @@
     <div>
     </div>
 
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-10">
-                        <small>© 2018 Copyright:</small>
-                        <strong>Ademilson 
-                                Adolfo
-                                Marcos
-                                Sergio
-                        </strong>
-                    </div>
-
-                </div>
-            </div>
-        </footer>
-        <a href="javascript:" id="return-to-top"><i class="glyphicon glyphicon-chevron-up"></i></a>
-
-
+        <jsp:include page = "includes/footer.jsp" />
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="js/validarFormularios.js"></script>

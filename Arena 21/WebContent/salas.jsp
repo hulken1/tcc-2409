@@ -11,7 +11,7 @@
 
         <link rel="stylesheet" href="css/reset.css">
         <!-- CSS reset -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+   		<link href="css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/padrao.css">
         <link rel="stylesheet" href="css/pesquisa.css">
@@ -26,16 +26,10 @@
     <div class="container-fluid">
 
         <!-- Topo -->
-        <div class="row">
-            <div class="col-md-12">
-                <nav class="row navtop col-md-12">
-                    <a href="index.html">
-                        <img src="imagens/logo/coliseu2.png" class="imgsite">
-                    </a>
-                </nav>
-            </div>
-        </div>
-
+        
+              <jsp:include page = "includes/logotipo.jsp" />
+          
+</div>
         <main class="cd-main-content">
             <div class="cd-tab-filter-wrapper">
                 <div class="cd-tab-filter">
@@ -88,23 +82,7 @@
 
         </main>
         <div>
-            <footer>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-10">
-                            <small>� 2018 Copyright:</small>
-                            <strong>Ademilson 
-                                        Adolfo
-                                        Marcos
-                                        Sergio
-                                </strong>
-                        </div>
-
-                    </div>
-                </div>
-
-            </footer>
-                    <a href="javascript:" id="return-to-top"><i class="glyphicon glyphicon-chevron-up"></i></a>
+            <jsp:include page = "includes/footer.jsp" />
         </div>
 
         <!-- cd-main-content -->

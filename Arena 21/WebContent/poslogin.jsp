@@ -36,14 +36,12 @@
     });
     </script>
 <body >
-    <div id="background">
-    </div>
-    <nav class="navtop">
-        <a href="index.jsp">
-            <img src="imagens/logo/coliseu2.png" class="imgsite">
-        </a>
 
-    </nav>
+    <div id="background"></div>
+    <div>
+    <jsp:include page = "includes/logotipo.jsp" />
+    </div>
+   
     <div class="barraleft">
         <ul class="nav navbar-nav">
             <li class="dropdown">
@@ -53,7 +51,7 @@
            		ub = (UsuarioBean) session.getAttribute("sessaoUsuario");
 
 				  %>
-	        	   <a href="#" data-toggle="dropdown"><span class="dropdown-toggle" ><% out.print(ub.getNome()); %></span></a>
+	        	   <a href="#" data-toggle="dropdown"><span class="dropdown-toggle" ><% out.print("Bem vindo: "+ub.getLogin()); %></span></a>
 	        	  
 	        	  <% }catch(Exception e){
             	out.print("Você não está logado.");
@@ -62,7 +60,8 @@
 %>
                 
                 <ul class="dropdown-menu">
-                <li><a href="#" id="salas"  onclick="window.location.href='salas.jsp'" title="Salas"><img src="imagens/icones/salas.png" ></a></li>
+                <li><a href="#" id="salas"  onclick="window.location.href='salas.jsp'" title="Salas">Salas</a></li>
+                 <li class="divider"></li>
                     <li><a id="config">Configurações de conta <span class="glyphicon glyphicon-cog pull-right"></span></a></li>
                     <li class="divider"></li>
                     <li><a id="conta">Dados do Usuario <span class="glyphicon glyphicon-stats pull-right"></span></a></li>
@@ -91,61 +90,50 @@
                      <div id="modalbody" class="modal-body">
                         <div id="modalbody" class="panel panel-info">
                             <div id="modalbody2" class="panel-heading">
-                              <h3 id="modaltitulo" class="panel-title">Nome Usuario</h3>
+                              <h3 id="modaltitulo" class="panel-title"><h1 id="estiloNomeUsuario"><% out.print(ub.getNome());%> <% out.print(ub.getSobrenome()); %></h1>
                             </div>
                             
                             <div class="panel-body">
                               <div id="modalbody" class="row">
                                 
-                                <div id="modaltitulo" class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+                                <div id="modaltitulo" class="col-md-12"> <br>
+
                                   <dl>
-                                    <dt>DEPARTMENT:</dt>
-                                    <dd>Administrator</dd>
-                                    <dt>HIRE DATE</dt>
-                                    <dd>11/12/2013</dd>
-                                    <dt>DATE OF BIRTH</dt>
-                                       <dd>11/12/2013</dd>
-                                    <dt>GENDER</dt>
-                                    <dd>Male</dd>
+                                    <h5>Informacões</h5>
+                                    
                                   </dl>
                                 </div>
-                                <div id="modaltitulo" class=" col-md-9 col-lg-9 "> 
+                                <div id="modaltitulo" class=" col-md-12 "> 
                                   <table id="modalbody" class="table table-user-information">
+
                                     <tbody>
                                        <tr>
                                          <td>ID-TAG</td>
-                                         <td>#123</td>
+                                         <td><% out.print("#"+ub.getIdJogador()); %></td>
                                      </tr>       
                                       <tr>
                                         <td>Jogo Favorito:</td>
-                                        <td>Programming</td>
+                                        <td><% out.print(ub.getJogoFavorito()); %></td>
                                       </tr>
                                       
                                       <tr>
                                         <td>Data de Nascimento</td>
-                                        <td>01/24/1988</td>
+                                        <td><% out.print(ub.getDatanascimento()); %></td>
                                       </tr>
-                                   
-                                         <tr>
-                                             <tr>
-                                        <td>Genero</td>
-                                        <td>Female</td>
-                                      </tr>
+                                                                   
                                         <tr>
-                                        <td>Endereço</td>
-                                        <td>Kathmandu,Nepal</td>
+                                        <td>Cidade</td>
+                                        <td><% out.print(ub.getCidade()); %></td>
                                       </tr>
                                       <tr>
+                                      
                                         <td>Email</td>
-                                        
+                                        <td><% out.print(ub.getEmail()); %></td>
                                       </tr>
-                                        <td>Telefone</td>
-                                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
-                                        </td>
-                                           
-                                      </tr>
-                                     
+                                      
                                     </tbody>
+
+                
                                   </table>                                                               
                                 </div>
                               </div>
@@ -271,32 +259,32 @@
   <div id="passwordreset" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
       <div class="panel panel-info">
           <div class="panel-heading">
-              <div class="panel-title">Create New Password</div>
+              <div class="panel-title">Crie uma nova senha</div>
           </div>                     
           <div id="modalbody" class="panel-body" >
               <form id="signupform" class="form-horizontal" role="form">
                   <div class="form-group">
-                      <label for="email" class=" control-label col-sm-3">Registered email</label>
+                      <label for="email" class=" control-label col-sm-3">Email</label>
                       <div class="col-sm-9">
-                          <input type="text" class="form-control" name="email" placeholder="Please input your email used to register with us">
+                          <input type="text" class="form-control" name="email" placeholder="Informe e-mail cadastrado">
                       </div>
                   </div>
                   <div class="form-group">
-                      <label for="email" class=" control-label col-sm-3">New password</label>
+                      <label for="email" class=" control-label col-sm-3">Nova senha</label>
                       <div class="col-sm-9">
-                          <input type="password" class="form-control" name="password" placeholder="create your new password">
+                          <input type="password" class="form-control" name="password" placeholder="Nova senha">
                       </div>
                   </div>
                   <div class="form-group">
-                      <label for="email" class=" control-label col-sm-3">Confirm password</label>
+                      <label for="email" class=" control-label col-sm-3">Confirmar senha</label>
                       <div class="col-sm-9">
-                          <input type="password" class="form-control" name="password_confirmation" placeholder="confirm your new password">
+                          <input type="password" class="form-control" name="password_confirmation" placeholder="Confirmar senha">
                       </div>
                   </div>
                   <div class="form-group">
                       <!-- Button -->                                 
                       <div class="  col-sm-offset-3 col-sm-9">
-                          <button id="btn-signup" type="button" class="btn btn-success">Submit</button>
+                          <button id="btn-signup" type="button" class="btn btn-success">Enviar</button>
                       </div>
                   </div>                             
               </form>
@@ -320,25 +308,57 @@
     <br>
     <br>
     <br>
-<div id="video" class="container">
 
+ 
+          <div class="container" >
+          <div class="row">
           
-                
-    <ul class="list-unstyled video-list-thumbs row">
-        <li class="col-md-6">
-            <a href="#" title="live">
-                <iframe src="https://player.twitch.tv/?channel=immortoru " frameborder="0" allowfullscreen="true" scrolling="no" height="600" width="500" ></iframe><a href="https://www.twitch.tv/immortoru?tt_content=text_link&tt_medium=live_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;"></a>
+          <div class="col-md-8">
+            <a href="#" title="live" class="rounded-circle">
+                <iframe src="https://player.twitch.tv/?channel=gaules" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/gaules?tt_content=text_link&tt_medium=live_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;"></a>
                  </a>
-            <br>
-        </li>
-        <li class="col-md-6">
-            <a href="#" title="Chat">
+         
+          </div>
+          <div class="col-md-4">
+          
+            <a href="#" title="Chat">  
+                <iframe src="https://www.twitch.tv/embed/gaules/chat" frameborder="0" scrolling="no" height="378" width="400"></iframe>
+           </a>
+          </div>
+          </div>
+        
+           <div class="row">
+          <div class="col-md-8">
+          
+            <a href="#" title="live" class="rounded-circle">
+                <iframe src="https://player.twitch.tv/?channel=falloficial" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/falloficial?tt_content=text_link&tt_medium=live_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;"></a>
+                 </a>
+         
+          </div>
+          <div class="col-md-4">
+          
+            <a href="#" title="Chat">  
+                <iframe src="https://www.twitch.tv/embed/falloficial/chat" frameborder="0" scrolling="no" height="378" width="400"></iframe>
+           </a>
+          </div>
+          </div>
+          
+          <div class="row">
+          <div class="col-md-8">
+          
+            <a href="#" title="live" class="rounded-circle">
+<iframe src="https://player.twitch.tv/?channel=netenho1" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/netenho1?tt_content=text_link&tt_medium=live_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;"></a>                 </a>
+         
+          </div>
+          <div class="col-md-4">
+          
+            <a href="#" title="Chat">  
+<iframe src="https://www.twitch.tv/embed/netenho1/chat" frameborder="0" scrolling="no" height="378" width="400"></iframe>           </a>
+          </div>
+          </div>
+          </div>
 
-            </a>
-                </li>
-                <iframe src="https://www.twitch.tv/embed/immortoru/chat" frameborder="0" scrolling="no" height="600" width="500" ></iframe>
-                <li class="col-md-4">
-           
+   
     
     
     </div>
@@ -354,24 +374,7 @@
 <br>
     <!-- Copyright -->
 
-    <div>
-      <footer>
-          <div class="container">
-              <div class="row">
-                  <div class="col-sm-10">
-                      <small>© 2018 Copyright:</small>
-                      <strong>Ademilson 
-                        Adolfo
-                        Marcos
-                        Sergio
-                </strong>
-                  </div>
-  
-              </div>
-          </div>
-      </footer>
-      <a href="javascript:" id="return-to-top"><i class="glyphicon glyphicon-chevron-up"></i></a>
-  </div>
+   <jsp:include page = "includes/footer.jsp" />
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/padrao.js"></script>

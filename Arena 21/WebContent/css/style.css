@@ -704,8 +704,3 @@ xcustom form elements
     white-space: pre;
     text-shadow: 1px 1px 0 rgba(140, 140, 140, 0.6), -1px -1px 1px rgba(0, 0, 0, 0.67);
 }
-#cidadeEstado select{
-	color:black;
-	margin-top:0px;
-    border: solid black;
-}

@@ -27,7 +27,7 @@ public class SalaDao {
 		
 		//SQL
 		String sql = "SELECT * FROM salas";
-		
+
 		//Obter dados das salas
 		Statement stmt = Conexao.obterConexao().createStatement();
 		ResultSet rs = stmt.executeQuery(sql);
@@ -50,7 +50,7 @@ public class SalaDao {
 								estrutura += "</div>";
 								estrutura += "<div>";
 								estrutura +="<small>Id jogador: </small>";
-						estrutura +="<span class='label' id='textoSala'>"+rs.getInt("idSala")+"</span>";
+						estrutura +="<span class='label' id='textoSala'>"+rs.getInt("idJogador")+"</span>";
 						estrutura += "</div>";	
 						estrutura +="<button class='btn btn-default' id='botaoEntrar'>Entrar</button>";
 					estrutura +="</div>	";	

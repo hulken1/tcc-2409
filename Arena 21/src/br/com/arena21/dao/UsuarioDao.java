@@ -42,11 +42,15 @@ public class UsuarioDao {
 				while(rs.next()) {
 					obj.setIdJogador(rs.getInt(1));
 					obj.setNome(rs.getString(2));
-					obj.setCpf(rs.getString(3));
-					obj.setCidade(rs.getString(4));
-					obj.setEmail(rs.getString(5));
-					obj.setLogin(rs.getString(6));
-					obj.setPass(rs.getString(7));
+					obj.setSobrenome(rs.getString(3));
+					obj.setCpf(rs.getString(4));
+					obj.setCidade(rs.getString(5));
+					obj.setEmail(rs.getString(6));
+					obj.setLogin(rs.getString(7));
+					obj.setPass(rs.getString(8));
+					obj.setDatanascimento(rs.getDate(9));
+					obj.setJogoFavorito(rs.getString(10));
+					
 					
 				}
 				

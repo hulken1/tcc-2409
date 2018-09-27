@@ -1,9 +1,12 @@
 package br.com.arena21.bean;
 
+import java.sql.Date;
+
 public class UsuarioBean {
 	private int idJogador;
 	
-	private String nome, cpf, cidade,email , login, pass;
+	private String nome, cpf, cidade,email , login, pass, jogoFavorito,sobrenome;
+	private Date datanascimento;
 	public int getIdJogador() {
 		return idJogador;
 	}
@@ -16,6 +19,13 @@ public class UsuarioBean {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public String getSobrenome() {
+		return sobrenome;
+	}
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
 	}
 	public String getCpf() {
 		return cpf;
@@ -47,6 +57,17 @@ public class UsuarioBean {
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
-	
-	
+	public String getJogoFavorito() {
+		return jogoFavorito;
+	}
+	public void setJogoFavorito(String jogoFavorito) {
+		this.jogoFavorito = jogoFavorito;
+	}
+	public Date getDatanascimento() {
+		return datanascimento;
+	}
+	public void setDatanascimento(Date datanascimento) {
+		this.datanascimento = datanascimento;
+	}
+
 }
