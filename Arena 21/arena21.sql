@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Set-2018 às 02:51
--- Versão do servidor: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Generation Time: 27-Set-2018 às 17:29
+-- Versão do servidor: 10.1.35-MariaDB
+-- versão do PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -53,7 +53,10 @@ CREATE TABLE `cadastrojogador` (
 --
 
 INSERT INTO `cadastrojogador` (`idJogador`, `nome`, `sobrenome`, `cpf`, `cidade`, `email`, `login`, `pass`, `datanascimento`, `jogoFavorito`, `diaS`, `tardeS`, `noiteS`, `finalD`, `finalT`, `finalN`, `passconfirm`) VALUES
-(1, 'sergio', 'guto', '07685047918', 'blumenau', 'gutolk2009@hotmail.com', 'hulken1', '123456', '1994-03-26', 'csgo', 'null', 'null', 'dia', 'dia', 'dia', 'null', '123456');
+(1, 'sergio', 'augusto', '07685047918', 'blumenau', 'gutolk2009@hotmail.com', 'hulken1', '123456', '1994-03-26', 'csgo', 'null', 'null', 'dia', 'dia', 'dia', 'null', '123456'),
+(2, 'Adolfo', 'Stanck', '06545889845', 'Blumenau', 'adolfostanck@gmail.com', 'adolfo12', '123456', '1992-11-24', 'csgo', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 'Adenilson', 'Vergutz', '25565545812', 'Blumenau', 'adenilsonvergutz@hotmail.com', 'adenilson', '123456', '1991-08-12', 'fortnite', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'Marcos', 'Macedo', '65532212503', 'Blumenau', 'marcosmacedo@yahoo.com.br', 'marcos', '123456', '1989-03-21', 'pubg', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -73,7 +76,7 @@ CREATE TABLE `salas` (
 --
 
 INSERT INTO `salas` (`idSala`, `nomeSala`, `nomeJogo`, `idJogador`) VALUES
-(15, 'adolfo', 'CS GO', NULL);
+(16, 'CS Da madruga', 'csgo', 1);
 
 --
 -- Indexes for dumped tables
@@ -83,7 +86,8 @@ INSERT INTO `salas` (`idSala`, `nomeSala`, `nomeJogo`, `idJogador`) VALUES
 -- Indexes for table `cadastrojogador`
 --
 ALTER TABLE `cadastrojogador`
-  ADD PRIMARY KEY (`idJogador`);
+  ADD PRIMARY KEY (`idJogador`),
+  ADD UNIQUE KEY `cpf` (`cpf`);
 
 --
 -- Indexes for table `salas`
@@ -100,13 +104,13 @@ ALTER TABLE `salas`
 -- AUTO_INCREMENT for table `cadastrojogador`
 --
 ALTER TABLE `cadastrojogador`
-  MODIFY `idJogador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idJogador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `salas`
 --
 ALTER TABLE `salas`
-  MODIFY `idSala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idSala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables

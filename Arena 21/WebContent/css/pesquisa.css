@@ -1,8 +1,8 @@
 #painelSala {
     display: inline-block;
     position:relative;
-    width:200px;
-    max-width:200px;
+    width:250px;
+    max-width:250px;
     height:240px;
 	max-height:300px;    
     margin-left: 10px;
@@ -14,9 +14,10 @@
 }
 
 #botaoEntrar{
-	width: 200px;
-	margin-top:120px;	
+	width: 250px;
+	margin-top:117px;	
 	text-align:center;
+	position: fixed;
 	
 }
 #botaoEntrar {
@@ -27,6 +28,7 @@
 	padding: 20px;
 	text-transform: uppercase;
 	display: inline-block;
+	
 }
  .col-md-3{
  padding-left: 0px;
@@ -40,7 +42,13 @@
 	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
 	transition: all 0.3s ease 0s;
 }
-
+#textoSala{
+	font-size:20px;
+	color:blue;
+}
+#textoSmall{
+	color:white;
+}
 input {
   padding: .5em;
 }
