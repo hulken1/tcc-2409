@@ -25,7 +25,11 @@
 
 <body>
     <div id="background"></div>
-  	 <jsp:include page = "includes/logotipo.jsp" />
+  	 <nav class="navtop">
+        <a href="index.jsp">
+            <img src="imagens/logo/coliseu2.png" class="imgsite">
+        </a>
+       
 </nav>
 
    

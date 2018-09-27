@@ -49,9 +49,10 @@
             UsuarioBean ub = new UsuarioBean();
             try{
            		ub = (UsuarioBean) session.getAttribute("sessaoUsuario");
+           		
 
 				  %>
-	        	   <a href="#" data-toggle="dropdown"><span class="dropdown-toggle" ><% out.print("Bem vindo: "+ub.getLogin()); %></span></a>
+	        	   <a href="#" data-toggle="dropdown"><span class="dropdown-toggle" ><% out.print("Bem vindo: <strong id='texto'>"+ub.getLogin()); %></strong></span></a>
 	        	  
 	        	  <% }catch(Exception e){
             	out.print("Você não está logado.");
@@ -139,11 +140,7 @@
                               </div>
                             </div>
                                  <div id="modalbody" class="panel-footer">
-                                        <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
-                                        <span class="pull-right">
-                                            <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
-                                            <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
-                                        </span>
+                                        
                                     </div>
                             
                           </div>
@@ -284,8 +281,14 @@
                   <div class="form-group">
                       <!-- Button -->                                 
                       <div class="  col-sm-offset-3 col-sm-9">
-                          <button id="btn-signup" type="button" class="btn btn-success">Enviar</button>
+                          <div class="alert alert-success" style="display: none">
+                                <a class="close" onclick="$('.alert').hide()">×</a>  
+                                <strong>Enviado com sucesso!</strong>
                       </div>
+                      <div class="col-sm-6">
+                                <button type="reset" onclick="$('.alert').show()" value="Exibir Alert" class="btn btn-success btn-lg">Enviar</button>
+                            </div>
+                            </div>
                   </div>                             
               </form>
           </div>
@@ -300,9 +303,12 @@
     <!-- Copyright -->
 <!-- modal lista de amigos FIM -->
 <br>
-<input type="text" placeholder="Cole Link Stream aqui" class="form-control input-sm" id="link">
+<form method="post">
+<input type="text" placeholder="Cole Link Stream aqui" class="form-control input-md" id="link">
   <!-- submit = botao , value= por nome do botao -->
-  <input type="submit" value="Enviar Stream" class="btn btn-danger btn">
+  <button id="enviarStream" type="reset" >Enviar stream</button>
+
+</form>
 
   <br>
     <br>

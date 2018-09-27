@@ -29,7 +29,11 @@
 .navtop {
     float: left;
 }
-
+#link{
+	height:40px;
+	margin-left:30px;
+	width: 40%;
+}
 .navbar-nav>li {
     background-color: transparent;
     opacity: 1;
@@ -69,7 +73,26 @@
 .dropdown-menu>li>a {
     color: #428bca;
 }
+#enviarStream{
+	margin-left:30px;
+	border: none;
+	background: #000000;
+	color: #ffffff !important;
+	font-weight: 100;
+	padding: 20px;
+	text-transform: uppercase;
+	display: inline-block;
 
+}
+#enviarStream:hover {
+	color: #ffffff!important;
+	font-weight: 700 !important;
+	letter-spacing: 3px;
+	background: none;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.3s ease 0s;
+}
 .dropdown ul.dropdown-menu {
     border-radius: 4px;
     box-shadow: none;
@@ -100,9 +123,16 @@
 }
 
 #modalbody{
-    background: rgba(104, 98, 98, 0.1);
+    background: rgba(0, 0, 0, 0.2);
 }
-
+#textoBemvindo{
+	font-size: 15px;
+	font-weight: 300;
+}
+#texto{
+	color:red;
+	font-size:18px;
+}
 #modaltitulo{
     color: whitesmoke!important;
     

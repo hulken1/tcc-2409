@@ -45,10 +45,11 @@
                  </div>
                   </div>
              	 <div class="row">  
-	<div class="col-md-3">	
+	<div class="col-md-6">	
 	
 	<a id="btnSalas" type="submit" href="salas.jsp">Exibir Salas</a>
 	<a id="btnSalas" type="submit" data-target="#modal-sala" data-toggle="modal">Criar Sala</a>		
+	<a id="btnSalas" type="submit" href="poslogin.jsp">Voltar</a>		
 	</div>
  
 	
@@ -151,7 +152,7 @@ String idjogador = String.valueOf(request.getParameter("idJogador"));
                         <div class="cd-filter-content">
 
                      <form action="pesquisajogo.jsp" method="get">
-    						<input type="text" name="nomeJogo" placeholder="Nome jogo que procura">
+    						<input type="text" name="nomeJogo" placeholder="Buscar jogo">
      						<input type="submit">
      						
 					</form>

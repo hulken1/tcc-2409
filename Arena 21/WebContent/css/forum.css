@@ -1,0 +1,123 @@
+
+  
+  .panel{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .single {
+      padding: 10px 15px;
+      margin-top: 0px;
+      background: #fcfcfc;
+      border: 1px solid #f0f0f0; 
+      
+  }
+  
+  .single ul {
+      margin-bottom: 0; 
+      
+  }
+  .single li a {
+      color: #666;
+      font-size: 14px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #f3f0f0;
+      line-height: 40px;
+      display: block;
+      text-decoration: none; 
+  }
+      
+  .single li a:hover {
+      color: #60B078; 
+  }
+  
+  
+  
+  .navbar-top {
+      background: #4D5061;
+      border-bottom: 4px solid #60B078;
+      color: #FFF;
+  }
+  .input-field{
+    color: #000;
+  }
+  
+  .text-white{
+      color:#fff;
+  }
+  
+  .navbar-doublerow > .navbar{
+      display: block;
+      padding: 0px auto;
+      margin: 0px auto;
+      min-height: 25px;
+  }
+  
+  /*Down nav*/
+  .navbar-doublerow .navbar-down .navbar-brand {
+      /*navbar brand*/
+      padding: 0px auto;
+      float: left;
+      color: #60B078;
+      font-size: 30px;
+  }
+  .navbar-doublerow .navbar-down ul>li>a{
+      /*Menu items*/
+      font-size: 15px;
+      color: #000;
+  }
+  .navbar-doublerow .navbar-down ul>li>a:hover{
+      /*menu hover*/
+      border-bottom: 1px solid #60B078;
+      color: #60B078;
+  }
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: whitesmoke;
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.panel-info>.panel-heading {
+    color:whitesmoke;
+    background-color: transparent;
+    border-color: white;
+}
+.panel-success>.panel-heading {
+    color: #3c763d;
+    background-color: transparent;
+    border-color: wheat;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #f5f5f5;
+    background-color: #fff;
+}
+.single {
+    padding: 10px 15px;
+    margin-top: 0px;
+    background: transparent;
+    border: 1px solid #f0f0f0;
+   
+}
+.single li a {
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #f3f0f0;
+    line-height: 40px;
+    display: block;
+    text-decoration: none;
+}
+#fotolateral{
+    max-width:400px;
+    max-height:400px;
+}

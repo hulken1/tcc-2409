@@ -35,9 +35,9 @@
     
   <div class="col-md-1" id="menuLateral">
     <div id="sideLateral" class="sidenav">
-  <a href="#" id="sobre" ><img src="imagens/icones/about.png" title="Sobre"></a>
+  <a href="#" id="sobre"  onclick="window.location.href='sobre.html'"><img src="imagens/icones/about.png" title="Sobre"></a>
   <a href="#" id="cadastro"  onclick="window.location.href='cadastro.jsp'" title="Cadastro"><img src="imagens/icones/cadastro.png"></a>
-  <a href="#" id="forum"  onclick="window.location.href='forum.jsp'" title="Forum"><img src="imagens/icones/forum.png" ></a>
+  <a href="#" id="forum"  onclick="window.location.href='forum.html'" title="Forum"><img src="imagens/icones/forum.png" ></a>
 </div>
    </div>  
     <div class="texto">Jogos do Momento</div>
@@ -101,7 +101,7 @@
                 <div class="col-sm-4 col-md-4 servicos_item">
                     <div><img src="imagens/quemsomos/amigos-2b-3.jpg" class="img-responsive img-circle" /></div>
                     <h4>Amigos</h4>
-                    <p>Encontre um amigo próximo á você</p>
+                    <p>Jogue com seus amigos</p>
                 </div>
 
                 <div class="col-sm-4 col-md-4 servicos_item">
@@ -153,10 +153,13 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="alert alert-success"></div>
+                                <div class="alert alert-success" style="display: none">
+                                <a class="close" onclick="$('.alert').hide()">×</a>  
+   					 <strong>Formulario enviado com sucesso!</strong>
+                                </div>
                             </div>
                             <div class="col-sm-6">
-                                <button type="submit" class="btn btn-success btn-lg">Enviar Formulário</button>
+                                <button type="reset" onclick="$('.alert').show()" value="Exibir Alert" class="btn btn-success btn-lg">Enviar Formulário</button>
                             </div>
                         </div>
                     </form>
@@ -273,4 +276,5 @@
     event.preventDefault();
   })
 });</script>
+
 </body>
