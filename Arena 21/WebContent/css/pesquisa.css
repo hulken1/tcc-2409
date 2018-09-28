@@ -3,7 +3,7 @@
     position:relative;
     width:250px;
     max-width:250px;
-    height:240px;
+    height:260px;
 	max-height:300px;    
     margin-left: 10px;
     margin-right: 10px;
@@ -14,11 +14,15 @@
 }
 
 #botaoEntrar{
-	width: 250px;
-	margin-top:115px;	
+	width: 250px;	
 	text-align:center;
-	position: absolute;
-	
+	position: absolute;	
+}
+#nomejogo{
+	margin-top: 60px;
+}
+#nomesala{
+	margin-top:5px;
 }
 #botaoEntrar {
 	border: none;
@@ -33,6 +37,10 @@
  .col-md-3{
  padding-left: 0px;
  }
+ .idjogador{
+	margin-top:70px; 
+ 
+ }
 #botaoEntrar:hover {
 	color: #ffffff!important;
 	font-weight: 700 !important;
@@ -43,11 +51,12 @@
 	transition: all 0.3s ease 0s;
 }
 #textoSala{
-	font-size:17px;
-	color:#000000;
+	font-size:15px;
+	color:#bfbfbf;
 }
 #textoSmall{
 	color:white;
+	font-size:15px;
 	margin-left:6px;
 }
 input {

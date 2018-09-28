@@ -110,18 +110,18 @@ String idjogador = String.valueOf(request.getParameter("idJogador"));
           			
           				<div class='col-md-3' id='painelSala'>					
 					<div>
-					<div id="textoPage">
+					<div d='nomesala'>
 						<small id='textoSmall'>Sala: </small>
 								<span class='label' id='textoSala'><%=rs.getString("nomeSala")%></span>
 								</div>
-								<div>
+								<div id='nomejogo'>
 								<small id='textoSmall'>Jogo: </small>
 								<span class='label'id='textoSala' ><%=rs.getString("nomeJogo")%></span>								
 								</div>
 							
-								<div>
-								<small id='textoSmall'>Id jogador: </small>
-						<span class='label' id='textoSala'>#<%=rs.getInt("idSala")%></span>
+								<div class='idjogador'>
+								<small id='textoSmall'>Id Sala: </small>
+						<span class='label' id='textoSala' style='color:#1E90FF'>#<%=rs.getInt("idSala")%></span>
 						</div>
 						</div>
 						<div>

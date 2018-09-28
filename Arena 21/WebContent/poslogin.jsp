@@ -91,7 +91,7 @@
                      <div id="modalbody" class="modal-body">
                         <div id="modalbody" class="panel panel-info">
                             <div id="modalbody2" class="panel-heading">
-                              <h3 id="modaltitulo" class="panel-title"><h1 id="estiloNomeUsuario"><% out.print(ub.getNome());%> <% out.print(ub.getSobrenome()); %></h1>
+                              <h3 id="modaltitulo" class="panel-title"><h1 id="estiloNomeUsuario"><% out.print(ub.getNome());%> <% out.print(ub.getSobrenome()); %></h1></h3>
                             </div>
                             
                             <div class="panel-body">
