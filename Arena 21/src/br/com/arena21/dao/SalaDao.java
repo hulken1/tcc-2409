@@ -54,7 +54,7 @@ public class SalaDao {
 						estrutura +="<span class='label' id='textoSala'style='color:#1E90FF'>#"+rs.getInt("idSala")+"</span>";
 						estrutura += "</div>";	
 						estrutura += "<div>";
-						estrutura +="<button class='btn btn-default' id='botaoEntrar'>Entrar</button>";
+						estrutura +="<a class='btn btn-default' id='botaoEntrar' href='salaagrupamento.jsp'>Entrar</a>";
 						estrutura += "</div>";	
 					estrutura +="</div>	";	
 					

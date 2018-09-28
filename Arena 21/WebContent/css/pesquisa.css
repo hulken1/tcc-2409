@@ -2,12 +2,11 @@
     display: inline-block;
     position:relative;
     width:250px;
-    max-width:250px;
-    height:260px;
+    height:255px;
 	max-height:300px;    
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: 50px;
+    margin-top: 20px;
 	background-image:url("../imagens/fundo/fundosala.gif");
 	background-size:cover;
 

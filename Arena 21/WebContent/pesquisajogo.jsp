@@ -37,7 +37,7 @@
         <div class="row">
             <div class="col-md-12">
                 <nav class="navtop">
-                    <a href="index.html">
+                    <a href="index.jsp">
                         <img src="imagens/logo/coliseu2.png" class="imgsite">
                     </a>
                 </nav>
