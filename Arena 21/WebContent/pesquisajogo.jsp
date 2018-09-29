@@ -107,7 +107,7 @@ String idjogador = String.valueOf(request.getParameter("idJogador"));
     	  
           //Sua estrutura contendo as imagens, textos e vídeos
 %>
-          			
+          			<form action="salaagrupamento.jsp" method="post">
           				<div class='col-md-3' id='painelSala'>					
 					<div>
 					<div d='nomesala'>
@@ -125,7 +125,10 @@ String idjogador = String.valueOf(request.getParameter("idJogador"));
 						</div>
 						</div>
 						<div>
-						<button class='btn btn-default' id='botaoEntrar'>Entrar</button>
+						
+    						<input  type="submit" id='botaoEntrar'>Entrar</input>
+					</form>
+						
 						</div>	
 					</div>	
           		

@@ -1,6 +1,5 @@
-<%@page import="br.com.arena21.connection.Conexao"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.PreparedStatement"%>
+<%@page import="br.com.arena21.dao.AgrupamentoDao"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -42,56 +41,27 @@
                  </div>
                   </div>
 <a id="btnSalas" type="submit" href="salas.jsp">Voltar</a>
-	<%
-	String idSala = String.valueOf(request.getParameter("idSala"));
-	String idJogador = String.valueOf(request.getParameter("idJogador"));
-	 try{
-	    	
-	       //Preparar o envio do parâmetro
-	         
-			
-	         //SQL
-	       String sql = "SELECT * FROM salasativas";
-
-	         
-	       //Preparar o envio do parâmetro
-	       PreparedStatement pstmt = Conexao.obterConexao().prepareStatement(sql);
-	       
-	      //Execução e laço de repetição         
-	       ResultSet rs = pstmt.executeQuery();
-
-	       
-	      while(rs.next()){
-	    	  
-	          //Sua estrutura contendo as imagens, textos e vídeos
-%>
-
-<div class="container">
-  <h2>Condensed Table</h2>
-  <p>The .table-condensed class makes a table more compact by cutting cell padding in half:</p>            
-  <table class="table table-condensed">
-    <thead>
-      <tr>
-        <th>Jogadores</th>
-        <th>Jogadores</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%=rs.getString("idJogador")%></td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      
-    </tbody>
-  </table>
-</div>
+	<div class="container">
+	<div class="row">
 <%
-	      }
-	      
-	  }catch(Exception e){
-	        out.print("Falha ao exibir tabela");
-	  }
+		out.print(new AgrupamentoDao().exibirJogadores());
 %>
+  </div>
+</div>
+ 
+
+
+ <!-- cd-main-content -->
+ <div>
+ <jsp:include page = "includes/footer.jsp" />
+ </div>
+ 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <a href="javascript:" id="return-to-top"><i class="glyphicon glyphicon-chevron-up"></i></a>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.mixitup.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/padrao.js"></script>
+       
 </body>
 </html>
