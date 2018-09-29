@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Set-2018 às 23:25
+-- Generation Time: 29-Set-2018 às 02:53
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -85,7 +85,33 @@ INSERT INTO `salas` (`idSala`, `nomeSala`, `nomeJogo`, `idJogador`) VALUES
 (21, 'Ralf melhor professor', 'pubg', NULL),
 (22, 'adolfo e os mano ', 'lol', NULL),
 (23, 'proway ', 'lol', NULL),
-(24, 'adenilson ta bolado', 'fortnite', NULL);
+(24, 'adenilson ta bolado', 'fortnite', NULL),
+(25, 'madrugao da rapaziada', 'csgo', NULL),
+(26, 'upa ate de manha', 'fortnite', NULL),
+(27, 'dale dale !!', 'LeagueOfLegends', NULL),
+(28, 'lvl 100 ate amanha !!!', 'WoW', NULL),
+(29, 'Taxi uberlab', 'Path of Exile', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `salasativas`
+--
+
+CREATE TABLE `salasativas` (
+  `idSala` int(11) NOT NULL,
+  `idJogador` int(11) NOT NULL,
+  `idSalasAtivas` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `salasativas`
+--
+
+INSERT INTO `salasativas` (`idSala`, `idJogador`, `idSalasAtivas`) VALUES
+(17, 3, 3),
+(22, 1, 1),
+(25, 1, 4);
 
 --
 -- Indexes for dumped tables
@@ -106,6 +132,14 @@ ALTER TABLE `salas`
   ADD KEY `idJogador` (`idJogador`);
 
 --
+-- Indexes for table `salasativas`
+--
+ALTER TABLE `salasativas`
+  ADD PRIMARY KEY (`idSalasAtivas`),
+  ADD KEY `idSala` (`idSala`,`idJogador`),
+  ADD KEY `idJogador` (`idJogador`,`idSala`) USING BTREE;
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -119,7 +153,13 @@ ALTER TABLE `cadastrojogador`
 -- AUTO_INCREMENT for table `salas`
 --
 ALTER TABLE `salas`
-  MODIFY `idSala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `idSala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT for table `salasativas`
+--
+ALTER TABLE `salasativas`
+  MODIFY `idSalasAtivas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -130,6 +170,12 @@ ALTER TABLE `salas`
 --
 ALTER TABLE `salas`
   ADD CONSTRAINT `idJogador` FOREIGN KEY (`idJogador`) REFERENCES `cadastrojogador` (`idJogador`);
+
+--
+-- Limitadores para a tabela `salasativas`
+--
+ALTER TABLE `salasativas`
+  ADD CONSTRAINT `idSala` FOREIGN KEY (`idSala`) REFERENCES `salas` (`idSala`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
