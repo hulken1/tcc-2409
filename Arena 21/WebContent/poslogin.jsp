@@ -333,22 +333,7 @@
           </div>
           </div>
         
-           <div class="row">
-          <div class="col-md-8">
-          
-            <a href="#" title="live" class="rounded-circle">
-                <iframe src="https://player.twitch.tv/?channel=falloficial" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/falloficial?tt_content=text_link&tt_medium=live_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;"></a>
-                 </a>
-         
-          </div>
-          <div class="col-md-4">
-          
-            <a href="#" title="Chat">  
-                <iframe src="https://www.twitch.tv/embed/falloficial/chat" frameborder="0" scrolling="no" height="378" width="400"></iframe>
-           </a>
-          </div>
-          </div>
-          
+           
           <div class="row">
           <div class="col-md-8">
           

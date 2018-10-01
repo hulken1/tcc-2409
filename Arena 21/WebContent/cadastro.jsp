@@ -16,6 +16,65 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bootstrap JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+			function fMasc(objeto,mascara) {
+				obj=objeto
+				masc=mascara
+				setTimeout("fMascEx()",1)
+			}
+			function fMascEx() {
+				obj.value=masc(obj.value)
+			}
+			function mTel(tel) {
+				tel=tel.replace(/\D/g,"")
+				tel=tel.replace(/^(\d)/,"($1")
+				tel=tel.replace(/(.{3})(\d)/,"$1)$2")
+				if(tel.length == 9) {
+					tel=tel.replace(/(.{1})$/,"-$1")
+				} else if (tel.length == 10) {
+					tel=tel.replace(/(.{2})$/,"-$1")
+				} else if (tel.length == 11) {
+					tel=tel.replace(/(.{3})$/,"-$1")
+				} else if (tel.length == 12) {
+					tel=tel.replace(/(.{4})$/,"-$1")
+				} else if (tel.length > 12) {
+					tel=tel.replace(/(.{4})$/,"-$1")
+				}
+				return tel;
+			}
+			function mCNPJ(cnpj){
+				cnpj=cnpj.replace(/\D/g,"")
+				cnpj=cnpj.replace(/^(\d{2})(\d)/,"$1.$2")
+				cnpj=cnpj.replace(/^(\d{2})\.(\d{3})(\d)/,"$1.$2.$3")
+				cnpj=cnpj.replace(/\.(\d{3})(\d)/,".$1/$2")
+				cnpj=cnpj.replace(/(\d{4})(\d)/,"$1-$2")
+				return cnpj
+			}
+			function mCPF(cpf){
+				cpf=cpf.replace(/\D/g,"")
+				cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
+				cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
+				cpf=cpf.replace(/(\d{3})(\d{1,2})$/,"$1-$2")
+				return cpf
+			}
+			function mCEP(cep){
+				cep=cep.replace(/\D/g,"")
+				cep=cep.replace(/^(\d{2})(\d)/,"$1.$2")
+				cep=cep.replace(/\.(\d{3})(\d)/,".$1-$2")
+				return cep
+			}
+			function mNum(num){
+				num=num.replace(/\D/g,"")
+				return num
+			}
+		</script>
+		<script>
+function myFunction() {
+    alert("Cadastro Efetuado com Sucesso");
+}
+</script>
+		
+		
     <style>
         #return-to-top {
             z-index: 1;
@@ -56,7 +115,7 @@
 
             <label>CPF:</label>
 
-            <input type="text" name="cpf" size="14" maxlength="14" class="form-control" id="cpf" placeholder="CPF">
+           <input type="text" name="cpf" placeholder="  Cpf"  maxlength="14" size="14" onkeydown="javascript: fMasc( this, mCPF );">
 
 
             <label for="cidade2">Cidade: </label>
@@ -115,7 +174,7 @@
                 <input type="file" name="imagem">
 
 
-                <label for="login">Login de usuÃÂ¡rio: </label>
+                <label for="login">Login de Usuario: </label>
 
                 <input type="text" name="login" class="form-control input-sm" id="login" placeholder="login">
 
@@ -131,10 +190,9 @@
         </fieldset>
        
 
-        <div class="botoescadastro">
-            <input type="submit" class="btn btn-danger btn">
-            <input type="reset" value="Limpar" class="btn btn-danger btn">
-        </div>
+        <div class="botoescadastro"> 
+            <input type="submit" value="Cadastrar" onclick="myFunction()" class="btn btn-danger btn">
+           </div>
     </form>
     
     <jsp:include page = "includes/footer.jsp" />
