@@ -27,34 +27,34 @@
 <div class="container-fluid">
 <div class="row">
 <div class="col-md-12">
-<div class="table table-striped">
+<div class="table-responsive">
   <table class="table-fill">
 <thead>
 <tr>
 <th class="text-left">JOGADORES</th>
-<th class="text-left">JOGADORES</th>
+<th class="text-right">JOGADORES</th>
 </tr>
 </thead>
 <tbody class="table-hover">
 <tr>
 <td class="text-left">jorge12</td>
-<td class="text-left">jamilekk</td>
+<td class="text-right">jamilekk</td>
 </tr>
 <tr>
 <td class="text-left">killer664</td>
-<td class="text-left">moidafocka</td>
+<td class="text-right">moidafocka</td>
 </tr>
 <tr>
 <td class="text-left">CorreBergue</td>
-<td class="text-left">sentaLaClaudia</td>
+<td class="text-right">sentaLaClaudia</td>
 </tr>
 <tr>
 <td class="text-left">correFIAO</td>
-<td class="text-left">kkkkkkkk</td>
+<td class="text-right">kkkkkkkk</td>
 </tr>
 <tr>
 <td class="text-left">thebest</td>
-<td class="text-left">hu3BR</td>
+<td class="text-right">hu3BR</td>
 </tr>
 </tbody>
 </table>
@@ -66,8 +66,8 @@
 <div class="row">
 <div class="col-md-12">
 <div id="botoes">
-<a id="btnSalas" type="submit" href="salas.jsp">Lobby</a>
-<a id="btnSalas" type="submit" href="">Trocar Equipe</a>
+<a id="btnLobby" type="submit" href="salas.jsp">Voltar ao Lobby</a>
+<a id="btnTroca" type="submit" href="">Trocar Equipe</a>
 </div>
 </div>
 </div>

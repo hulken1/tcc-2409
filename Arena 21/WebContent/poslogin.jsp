@@ -36,7 +36,7 @@
     });
     </script>
 <body >
-
+<%@ include file="includes/msg.jsp" %>
     <div id="background"></div>
     <div>
     <jsp:include page = "includes/logotipo.jsp" />

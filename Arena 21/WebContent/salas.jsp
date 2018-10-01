@@ -32,7 +32,7 @@
           <div class="row">  
 	<div class="col-md-6">	
 	
-	<a id="btnSalas" type="submit" href="salas.jsp">Exibir Salas</a>
+	<a id="btnSalas" type="submit" href="salas.jsp">Todas Salas</a>
 	<a id="btnSalas" type="submit" data-target="#modal-sala" data-toggle="modal">Criar Sala</a>	
 	<a id="btnSalas" type="submit" href="poslogin.jsp">Voltar</a>			
 	</div>

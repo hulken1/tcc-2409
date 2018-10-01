@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Set-2018 às 02:53
--- Versão do servidor: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Generation Time: 01-Out-2018 às 07:06
+-- Versão do servidor: 10.1.35-MariaDB
+-- versão do PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,23 +30,23 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cadastrojogador` (
   `idJogador` int(11) NOT NULL,
-  `nome` varchar(50) DEFAULT NULL,
-  `sobrenome` varchar(50) DEFAULT NULL,
-  `cpf` varchar(15) DEFAULT NULL,
-  `cidade` varchar(50) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `login` varchar(20) DEFAULT NULL,
-  `pass` varchar(20) DEFAULT NULL,
+  `nome` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `sobrenome` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `cpf` varchar(15) CHARACTER SET latin1 DEFAULT NULL,
+  `cidade` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `email` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `login` varchar(20) CHARACTER SET latin1 DEFAULT NULL,
+  `pass` varchar(20) CHARACTER SET latin1 DEFAULT NULL,
   `datanascimento` date DEFAULT NULL,
-  `jogoFavorito` varchar(50) DEFAULT NULL,
-  `diaS` varchar(10) DEFAULT NULL,
-  `tardeS` varchar(10) DEFAULT NULL,
-  `noiteS` varchar(10) DEFAULT NULL,
-  `finalD` varchar(10) DEFAULT NULL,
-  `finalT` varchar(10) DEFAULT NULL,
-  `finalN` varchar(10) DEFAULT NULL,
-  `passconfirm` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `jogoFavorito` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `diaS` varchar(10) CHARACTER SET latin1 DEFAULT NULL,
+  `tardeS` varchar(10) CHARACTER SET latin1 DEFAULT NULL,
+  `noiteS` varchar(10) CHARACTER SET latin1 DEFAULT NULL,
+  `finalD` varchar(10) CHARACTER SET latin1 DEFAULT NULL,
+  `finalT` varchar(10) CHARACTER SET latin1 DEFAULT NULL,
+  `finalN` varchar(10) CHARACTER SET latin1 DEFAULT NULL,
+  `passconfirm` varchar(50) CHARACTER SET latin1 DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `cadastrojogador`
@@ -67,17 +67,17 @@ INSERT INTO `cadastrojogador` (`idJogador`, `nome`, `sobrenome`, `cpf`, `cidade`
 
 CREATE TABLE `salas` (
   `idSala` int(11) NOT NULL,
-  `nomeSala` varchar(40) DEFAULT NULL,
-  `nomeJogo` varchar(40) DEFAULT NULL,
+  `nomeSala` varchar(40) CHARACTER SET latin1 DEFAULT NULL,
+  `nomeJogo` varchar(40) CHARACTER SET latin1 DEFAULT NULL,
   `idJogador` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `salas`
 --
 
 INSERT INTO `salas` (`idSala`, `nomeSala`, `nomeJogo`, `idJogador`) VALUES
-(16, 'CS Da madruga', 'csgo', 1),
+(16, 'CS Da madruga', 'csgo', NULL),
 (17, 'RALF BOLADAO', 'fortnite', NULL),
 (18, 'Proway entra21', 'pubg', NULL),
 (19, 'vem galera', 'csgo', NULL),
@@ -99,19 +99,16 @@ INSERT INTO `salas` (`idSala`, `nomeSala`, `nomeJogo`, `idJogador`) VALUES
 --
 
 CREATE TABLE `salasativas` (
-  `idSala` int(11) NOT NULL,
-  `idJogador` int(11) NOT NULL,
-  `idSalasAtivas` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `idSalasAtivas` int(11) NOT NULL,
+  `idSala` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `salasativas`
 --
 
-INSERT INTO `salasativas` (`idSala`, `idJogador`, `idSalasAtivas`) VALUES
-(17, 3, 3),
-(22, 1, 1),
-(25, 1, 4);
+INSERT INTO `salasativas` (`idSalasAtivas`, `idSala`) VALUES
+(0, 17);
 
 --
 -- Indexes for dumped tables
@@ -122,7 +119,8 @@ INSERT INTO `salasativas` (`idSala`, `idJogador`, `idSalasAtivas`) VALUES
 --
 ALTER TABLE `cadastrojogador`
   ADD PRIMARY KEY (`idJogador`),
-  ADD UNIQUE KEY `cpf` (`cpf`);
+  ADD UNIQUE KEY `cpf` (`cpf`),
+  ADD UNIQUE KEY `login` (`login`);
 
 --
 -- Indexes for table `salas`
@@ -136,8 +134,8 @@ ALTER TABLE `salas`
 --
 ALTER TABLE `salasativas`
   ADD PRIMARY KEY (`idSalasAtivas`),
-  ADD KEY `idSala` (`idSala`,`idJogador`),
-  ADD KEY `idJogador` (`idJogador`,`idSala`) USING BTREE;
+  ADD KEY `idSala` (`idSala`),
+  ADD KEY `idJogador` (`idSala`) USING BTREE;
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -153,13 +151,13 @@ ALTER TABLE `cadastrojogador`
 -- AUTO_INCREMENT for table `salas`
 --
 ALTER TABLE `salas`
-  MODIFY `idSala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `idSala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `salasativas`
 --
 ALTER TABLE `salasativas`
-  MODIFY `idSalasAtivas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idSalasAtivas` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -169,7 +167,7 @@ ALTER TABLE `salasativas`
 -- Limitadores para a tabela `salas`
 --
 ALTER TABLE `salas`
-  ADD CONSTRAINT `idJogador` FOREIGN KEY (`idJogador`) REFERENCES `cadastrojogador` (`idJogador`);
+  ADD CONSTRAINT `fk_idJogador` FOREIGN KEY (`idJogador`) REFERENCES `cadastrojogador` (`idJogador`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `salasativas`

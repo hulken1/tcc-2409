@@ -8,7 +8,7 @@
             try{          	
             	String nomesala = request.getParameter("nomeSala");
                 String nomejogo = request.getParameter("nomeJogo");
-              
+                
                 
                 String DRIVER = "com.mysql.jdbc.Driver";
                 Class.forName(DRIVER).newInstance();
