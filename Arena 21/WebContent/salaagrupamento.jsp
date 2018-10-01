@@ -1,4 +1,5 @@
-<%@page import="br.com.arena21.dao.AgrupamentoDao"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="br.com.arena21.connection.Conexao"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -7,17 +8,10 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-
-        <link rel="stylesheet" href="css/reset.css">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- CSS reset -->
-        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/padrao.css">
-        <link rel="stylesheet" href="css/pesquisa.css">
-                    
-
+        <link rel="stylesheet" href="css/salaagrupamentos.css">
         <!-- Resource style -->
 
         <!-- Modernizr -->
@@ -27,40 +21,79 @@
 <body>
 
  <div id="background"></div>
-    <div class="container-fluid">
-
-        <!-- Topo -->
-        <div class="row">
-            <div class="col-md-12">
-                <nav class="navtop">
-                    <a href="">
-                        <img src="imagens/logo/coliseu2.png" class="imgsite">
-                    </a>
-                </nav>
-                </div>
-                 </div>
-                  </div>
-<a id="btnSalas" type="submit" href="salas.jsp">Voltar</a>
-	<div class="container">
-	<div class="row">
-<%
-		out.print(new AgrupamentoDao().exibirJogadores());
-%>
-  </div>
+ 
+  <jsp:include page = "includes/logotipo.jsp" />
+  </nav>
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12">
+<div class="table table-striped">
+  <table class="table-fill">
+<thead>
+<tr>
+<th class="text-left">JOGADORES</th>
+<th class="text-left">JOGADORES</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+<tr>
+<td class="text-left">jorge12</td>
+<td class="text-left">jamilekk</td>
+</tr>
+<tr>
+<td class="text-left">killer664</td>
+<td class="text-left">moidafocka</td>
+</tr>
+<tr>
+<td class="text-left">CorreBergue</td>
+<td class="text-left">sentaLaClaudia</td>
+</tr>
+<tr>
+<td class="text-left">correFIAO</td>
+<td class="text-left">kkkkkkkk</td>
+</tr>
+<tr>
+<td class="text-left">thebest</td>
+<td class="text-left">hu3BR</td>
+</tr>
+</tbody>
+</table>
 </div>
- 
-
-
- <!-- cd-main-content -->
- <div>
- <jsp:include page = "includes/footer.jsp" />
+</div>
+</div>
  </div>
- 
+ <div class="container-fluid">
+<div class="row">
+<div class="col-md-12">
+<div id="botoes">
+<a id="btnSalas" type="submit" href="salas.jsp">Lobby</a>
+<a id="btnSalas" type="submit" href="">Trocar Equipe</a>
+</div>
+</div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+  <jsp:include page = "includes/footer.jsp" />
+</div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <a href="javascript:" id="return-to-top"><i class="glyphicon glyphicon-chevron-up"></i></a>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.mixitup.min.js"></script>
-        <script src="js/main.js"></script>
         <script src="js/padrao.js"></script>
        
 </body>
