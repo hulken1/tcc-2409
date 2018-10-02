@@ -64,10 +64,19 @@
  </div>
  <div class="container-fluid">
 <div class="row">
-<div class="col-md-12">
+<div class="col-md-4">
 <div id="botoes">
 <a id="btnLobby" type="submit" href="salas.jsp">Voltar ao Lobby</a>
+</div>
+</div>
+<div class="col-md-4">
+<div id="botoes">
 <a id="btnTroca" type="submit" href="">Trocar Equipe</a>
+</div>
+</div>
+<div class="col-md-4">
+<div id="botoes">
+<a id="btnIniciar" type="submit" href="">Iniciar</a>
 </div>
 </div>
 </div>
